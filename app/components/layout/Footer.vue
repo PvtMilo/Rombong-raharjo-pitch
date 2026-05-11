@@ -5,12 +5,12 @@
       <div class="grid grid-cols-12 gap-y-10 gap-x-6 lg:gap-10 mb-16">
         <!-- Brand col -->
         <div class="col-span-12 md:col-span-6 lg:col-span-3">
-          <div class="flex items-center gap-2.5 mb-4">
+          <NuxtLink to="/" class="flex items-center gap-2.5 mb-4">
             <img src="/images/rombong-logo.png" alt="Rombong Raharjo" class="h-16 w-auto" />
             <span class="font-grotesk font-black text-lg tracking-tight leading-none">
               <span class="text-orange-500">ROMBONG</span> <span class="text-stone-50">RAHARJO</span>
             </span>
-          </div>
+          </NuxtLink>
           <p class="mt-4 text-stone-300 text-sm font-grotesk leading-relaxed max-w-xs">
             Menghadirkan solusi arsitektur, konstruksi, interior, dan furniture
             custom dengan pengerjaan profesional dan terukur.
@@ -130,11 +130,11 @@
 
 <script setup>
 const navLinks = [
-  { label: "Beranda", href: "#hero" },
-  { label: "Portofolio", href: "#portfolio" },
-  { label: "Layanan", href: "#services" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Artikel", href: "#blog" },
+  { label: "Beranda", href: "/#hero" },
+  { label: "Portofolio", href: "/#portfolio" },
+  { label: "Layanan", href: "/#services" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Artikel", href: "/#blog" },
 ];
 const socialLinks = ["Instagram", "Twitter", "LinkedIn", "YouTube"];
 </script>

@@ -77,7 +77,7 @@ const services = [
     ],
     keunggulan: "proses desain dan pembangunan yang terintegrasi, pengerjaan detail, serta kualitas hasil yang terukur untuk hunian maupun bangunan komersial.",
     buttonText: "KONSULTASI SEKARANG",
-    link: "/jasa-kontraktor-arsitektur",
+    link: "/services/jasa-kontraktor-arsitektur",
     img: "/images/service-design.jpg",
   },
   {
@@ -91,7 +91,7 @@ const services = [
     ],
     keunggulan: "desain interior yang menyesuaikan gaya hidup, karakter brand, serta penggunaan ruang agar tampil modern, nyaman, dan optimal.",
     buttonText: "HUBUNGI KAMI",
-    link: "/jasa-desain-interior",
+    link: "/services/jasa-desain-interior",
     img: "/images/service-interior.jpg",
   },
   {
@@ -105,7 +105,7 @@ const services = [
     ],
     keunggulan: "furniture dibuat custom dengan material pilihan, pengerjaan detail, serta hasil akhir yang menyatu dengan desain interior dan kebutuhan ruang.",
     buttonText: "KONSULTASI FURNITURE",
-    link: "/custom-furniture-interior",
+    link: "/services/custom-furniture-interior",
     img: "/images/service-construction.jpg",
   },
 ];

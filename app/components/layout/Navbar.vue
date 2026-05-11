@@ -4,12 +4,12 @@
       class="flex items-center justify-between section-padding py-5 max-w-[100rem] mx-auto w-11/12"
     >
       <!-- Logo -->
-      <div class="flex items-center gap-2.5">
+      <NuxtLink to="/" class="flex items-center gap-2.5">
         <img src="/images/rombong-logo.png" alt="Rombong Raharjo" class="h-12 w-auto" />
         <span class="font-grotesk font-black text-lg tracking-tight leading-none">
           <span class="text-orange-500">ROMBONG</span> <span class="text-stone-50">RAHARJO</span>
         </span>
-      </div>
+      </NuxtLink>
 
       <!-- Desktop Nav Links -->
       <ul class="hidden md:flex items-center gap-8">
@@ -25,7 +25,7 @@
       <!-- Desktop CTA -->
       <div class="hidden md:flex items-center">
         <a
-          href="#contact"
+          href="/#contact"
           class="font-grotesk text-sm font-semibold uppercase tracking-wider border border-orange-500 rounded-full px-6 py-2.5 text-white bg-orange-600 hover:bg-orange-700 hover:border-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 transition-colors shadow-sm shadow-orange-950/20"
           >Konsultasi</a
         >
@@ -72,7 +72,7 @@
         >{{ item.label }}</a
       >
       <a
-        href="#contact"
+        href="/#contact"
         class="font-grotesk text-sm font-semibold uppercase tracking-wider border border-orange-500 rounded-full px-6 py-2.5 text-white bg-orange-600 hover:bg-orange-700 hover:border-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 transition-colors text-center shadow-sm shadow-orange-950/20"
         @click="mobileOpen = false"
         >Konsultasi</a
@@ -85,10 +85,10 @@
 const mobileOpen = ref(false);
 
 const navItems = [
-  { label: "Beranda", href: "#hero" },
-  { label: "Portofolio", href: "#portfolio" },
-  { label: "Layanan", href: "#services" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Artikel", href: "#blog" },
+  { label: "Beranda", href: "/#hero" },
+  { label: "Portofolio", href: "/#portfolio" },
+  { label: "Layanan", href: "/#services" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Artikel", href: "/#blog" },
 ];
 </script>
