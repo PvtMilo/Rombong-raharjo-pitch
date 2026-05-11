@@ -1,15 +1,15 @@
 <template>
   <a
     :href="href"
-    class="inline-flex items-center gap-2 font-grotesk text-sm font-semibold uppercase tracking-wider rounded-full px-7 py-3 transition-colors"
+    class="inline-flex items-center gap-2 font-grotesk text-sm font-semibold uppercase tracking-wider rounded-full px-7 py-3 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50"
     :class="[
       variant === 'primary'
-        ? 'bg-accent text-dark hover:bg-accent/80'
+        ? 'bg-orange-600 text-white hover:bg-orange-700 shadow-orange-900/10'
         : variant === 'outline-light'
-          ? 'border border-white text-white hover:bg-white hover:text-dark'
+          ? 'border border-stone-50/70 text-stone-50 hover:bg-stone-50 hover:text-stone-950 focus-visible:ring-offset-stone-950'
           : variant === 'outline-dark'
-            ? 'border border-dark text-dark hover:bg-dark hover:text-white'
-            : 'bg-white text-dark hover:bg-white/80'
+            ? 'border border-stone-300 text-stone-800 hover:bg-stone-100 hover:border-stone-400'
+            : 'bg-white text-stone-950 hover:bg-orange-50'
     ]"
   >
     <slot />

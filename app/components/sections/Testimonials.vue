@@ -1,14 +1,13 @@
 <template>
   <section
     id="testimonials"
-    class="bg-dark py-20 md:py-28 section-padding border-b border-white/10 overflow-hidden"
+    class="bg-stone-50 py-20 md:py-28 section-padding border-b border-stone-200 overflow-hidden"
   >
     <div class="w-11/12 max-w-[100rem] mx-auto mb-12">
-      <BaseBadge class="mb-6">Testimonials</BaseBadge>
       <h2
-        class="font-grotesk font-bold text-white uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
+        class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
       >
-        Apa Kata <br /><span class="text-accent">Klien Kami?</span>
+        Apa Kata <br /><span class="text-orange-600">Klien Kami?</span>
       </h2>
     </div>
 
@@ -22,7 +21,7 @@
           class="px-3 shrink-0 w-[300px] sm:w-[400px] md:w-[500px]"
         >
           <div
-            class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row items-start gap-5 h-full hover:border-accent/30 transition-colors"
+            class="bg-white border border-stone-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start gap-5 h-full hover:border-orange-300 hover:shadow-xl hover:shadow-stone-900/10 transition-colors"
           >
             <img
               :src="item.image"
@@ -31,17 +30,17 @@
             />
             <div class="flex flex-col gap-2">
               <div>
-                <h4 class="font-grotesk font-bold text-white text-base">
+                <h4 class="font-grotesk font-bold text-stone-950 text-base">
                   {{ item.name }}
                 </h4>
                 <p
-                  class="font-grotesk text-accent/80 text-xs mt-1 leading-relaxed"
+                  class="font-grotesk text-orange-600 text-xs mt-1 leading-relaxed"
                 >
                   {{ item.location }}
                 </p>
               </div>
               <p
-                class="font-grotesk text-white/70 text-sm leading-relaxed mt-2 italic"
+                class="font-grotesk text-stone-600 text-sm leading-relaxed mt-2 italic"
               >
                 "{{ item.testimonial }}"
               </p>
@@ -55,7 +54,7 @@
           class="px-3 shrink-0 w-[300px] sm:w-[400px] md:w-[500px]"
         >
           <div
-            class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row items-start gap-5 h-full hover:border-accent/30 transition-colors"
+            class="bg-white border border-stone-200 rounded-2xl p-6 flex flex-col sm:flex-row items-start gap-5 h-full hover:border-orange-300 hover:shadow-xl hover:shadow-stone-900/10 transition-colors"
           >
             <img
               :src="item.image"
@@ -64,17 +63,17 @@
             />
             <div class="flex flex-col gap-2">
               <div>
-                <h4 class="font-grotesk font-bold text-white text-base">
+                <h4 class="font-grotesk font-bold text-stone-950 text-base">
                   {{ item.name }}
                 </h4>
                 <p
-                  class="font-grotesk text-accent/80 text-xs mt-1 leading-relaxed"
+                  class="font-grotesk text-orange-600 text-xs mt-1 leading-relaxed"
                 >
                   {{ item.location }}
                 </p>
               </div>
               <p
-                class="font-grotesk text-white/70 text-sm leading-relaxed mt-2 italic"
+                class="font-grotesk text-stone-600 text-sm leading-relaxed mt-2 italic"
               >
                 "{{ item.testimonial }}"
               </p>
@@ -85,10 +84,10 @@
 
       <!-- Fade Gradients -->
       <div
-        class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-dark to-transparent"
+        class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-stone-50 to-transparent"
       ></div>
       <div
-        class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-dark to-transparent"
+        class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-stone-50 to-transparent"
       ></div>
     </div>
   </section>

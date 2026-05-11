@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark">
+  <div class="bg-stone-50">
     <LayoutNavbar />
     <main>
       <SectionsHero />
@@ -9,6 +9,7 @@
       <SectionsServices />
       <SectionsTestimonials />
       <SectionsPortfolio />
+      <SectionsFaq />
       <SectionsBlog />
       <SectionsContact />
     </main>
@@ -18,8 +19,8 @@
 
 <script setup>
 useSeoMeta({
-  title: "AxiomNexus — Architectural Excellence Redefined",
+  title: "Rombong Raharjo - Jasa Kontraktor, Arsitektur, dan Interior",
   description:
-    "Award-winning architecture studio specializing in residential, commercial, and interior design projects worldwide.",
+    "Jasa kontraktor, arsitektur, desain interior, dan furniture custom untuk hunian, komersial, dan kebutuhan konstruksi modern.",
 });
 </script>

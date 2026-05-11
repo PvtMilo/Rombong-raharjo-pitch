@@ -1,31 +1,30 @@
 <template>
   <section
     id="about"
-    class="bg-dark py-20 md:py-28 section-padding border-b border-white/10"
+    class="bg-stone-50 py-20 md:py-28 section-padding border-b border-stone-200"
   >
     <div class="w-11/12 max-w-[100rem] mx-auto">
       <div
         class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
       >
         <!-- Left: Image -->
-        <div class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3]">
+        <div class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-xl shadow-stone-900/10">
           <img
             src="/images/portfolio-2.jpg"
-            alt="Rombong Raharjo Project"
+            alt="Proyek Rombong Raharjo"
             class="w-full h-full object-cover"
           />
         </div>
 
         <!-- Right: Text -->
         <div>
-          <BaseBadge class="mb-6">Tentang Kami</BaseBadge>
           <h2
-            class="font-grotesk font-bold text-white uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)] mb-8"
+            class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)] mb-8"
           >
-            Rombong <span class="text-accent">Raharjo</span>
+            Rombong <span class="text-orange-600">Raharjo</span>
           </h2>
           <div
-            class="font-grotesk text-white/60 text-base leading-relaxed flex flex-col gap-5"
+            class="font-grotesk text-stone-600 text-base leading-relaxed flex flex-col gap-5"
           >
             <p>
               Rombong Raharjo adalah perusahaan jasa kontraktor, arsitektur, dan
@@ -49,6 +48,7 @@
               ketepatan waktu, dan kepuasan klien.
             </p>
           </div>
+          <BaseButton href="#contact" variant="primary" arrow class="mt-8">Hubungi Kami</BaseButton>
         </div>
       </div>
     </div>

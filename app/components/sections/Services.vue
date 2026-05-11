@@ -1,18 +1,17 @@
 <template>
-  <section id="services" class="bg-dark py-20 md:py-28">
+  <section id="services" class="bg-stone-950 py-20 md:py-28">
     <div class="w-11/12 max-w-[100rem] mx-auto">
       <!-- Section header -->
       <div class="section-padding mb-16">
-        <BaseBadge class="mb-6">Layanan Kami</BaseBadge>
         <h2
-          class="font-grotesk font-bold text-white uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
+          class="font-grotesk font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
         >
-          Layanan <span class="text-accent">Utama Kami</span>
+          Layanan <span class="text-orange-400">Utama Kami</span>
         </h2>
       </div>
 
       <!-- Alternating service blocks -->
-      <div class="flex flex-col divide-y divide-white/10">
+      <div class="flex flex-col divide-y divide-stone-800">
         <div
           v-for="(service, i) in services"
           :key="service.title"
@@ -21,12 +20,12 @@
           <!-- Text side -->
           <div :class="i % 2 !== 0 ? 'lg:order-last' : ''">
             <h3
-              class="font-grotesk font-bold text-white uppercase text-2xl md:text-3xl lg:text-4xl tracking-tight leading-tight mb-5"
+              class="font-grotesk font-bold text-stone-50 uppercase text-2xl md:text-3xl lg:text-4xl tracking-tight leading-tight mb-5"
             >
               {{ service.title }}
             </h3>
             <p
-              class="font-grotesk text-white/50 text-base leading-relaxed mb-6 max-w-lg"
+              class="font-grotesk text-stone-300 text-base leading-relaxed mb-6 max-w-lg"
             >
               {{ service.desc }}
             </p>
@@ -35,16 +34,16 @@
               <li
                 v-for="feat in service.features"
                 :key="feat"
-                class="flex items-center gap-3 font-grotesk text-sm text-white/70"
+                class="flex items-center gap-3 font-grotesk text-sm text-stone-200"
               >
                 <span
-                  class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"
+                  class="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0"
                 />
                 {{ feat }}
               </li>
             </ul>
-            <p class="font-grotesk text-white/60 text-sm leading-relaxed mb-10 max-w-lg">
-              <strong class="text-white font-semibold">Keunggulan:</strong> {{ service.keunggulan }}
+            <p class="font-grotesk text-stone-300 text-sm leading-relaxed mb-10 max-w-lg">
+              <strong class="text-stone-50 font-semibold">Keunggulan:</strong> {{ service.keunggulan }}
             </p>
             <BaseButton :href="service.link" variant="outline-light" arrow>
               {{ service.buttonText }}
@@ -52,7 +51,7 @@
           </div>
 
           <!-- Image side -->
-          <div class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3]">
+          <div class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-2xl shadow-stone-950/30">
             <img
               :src="service.img"
               :alt="service.title"
@@ -83,12 +82,12 @@ const services = [
   },
   {
     title: "JASA DESAIN INTERIOR",
-    desc: "Kami menghadirkan layanan desain interior untuk rumah, kantor, café, retail, apartemen, dan ruang komersial dengan konsep yang estetis, nyaman, dan fungsional sesuai kebutuhan ruang Anda.",
+    desc: "Kami menghadirkan layanan desain interior untuk rumah, kantor, cafe, retail, apartemen, dan ruang komersial dengan konsep yang estetis, nyaman, dan fungsional sesuai kebutuhan ruang Anda.",
     features: [
-      "Konsep & Space Planning Interior",
+      "Konsep & Perencanaan Ruang Interior",
       "Desain Interior Rumah & Komersial",
       "Visualisasi 3D Interior",
-      "Interior Build & Finishing",
+      "Pembangunan & Finishing Interior",
     ],
     keunggulan: "desain interior yang menyesuaikan gaya hidup, karakter brand, serta penggunaan ruang agar tampil modern, nyaman, dan optimal.",
     buttonText: "HUBUNGI KAMI",
@@ -96,11 +95,11 @@ const services = [
     img: "/images/service-interior.jpg",
   },
   {
-    title: "CUSTOM FURNITURE & INTERIOR BUILD",
-    desc: "Kami memproduksi furniture custom dan interior build dengan desain yang menyesuaikan kebutuhan fungsi, dimensi ruangan, dan konsep interior secara menyeluruh.",
+    title: "FURNITURE CUSTOM & PEMBANGUNAN INTERIOR",
+    desc: "Kami memproduksi furniture custom dan pembangunan interior dengan desain yang menyesuaikan kebutuhan fungsi, dimensi ruangan, dan konsep interior secara menyeluruh.",
     features: [
-      "Kitchen Set & Built-in Furniture",
-      "Custom Lemari, Meja, dan Display",
+      "Kitchen Set & Furniture Tanam",
+      "Lemari, Meja, dan Display Custom",
       "Material & Finishing Berkualitas",
       "Produksi & Instalasi Profesional",
     ],
