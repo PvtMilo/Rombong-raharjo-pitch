@@ -2,7 +2,12 @@
   <section id="solutions" class="bg-white py-20 md:py-28 section-padding">
     <div class="w-11/12 max-w-[100rem] mx-auto">
       <!-- Top row: badge + heading -->
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+        class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16"
+      >
         <div class="max-w-2xl">
           <h2 class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]">
             Kenapa Pilih<br>
@@ -22,6 +27,9 @@
         <div
           v-for="(service, i) in services"
           :key="i"
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: i * 100 } }"
           class="border border-stone-200 bg-white rounded-2xl p-8 flex flex-col gap-4 hover:border-orange-300 hover:shadow-xl hover:shadow-stone-900/10 transition-colors"
         >
           <!-- Icon block -->

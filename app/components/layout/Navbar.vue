@@ -12,7 +12,7 @@
       </NuxtLink>
 
       <!-- Desktop Nav Links -->
-      <ul class="hidden md:flex items-center gap-8">
+      <ul class="hidden lg:flex items-center gap-8">
         <li v-for="item in navItems" :key="item.label">
           <a
             :href="item.href"
@@ -23,7 +23,7 @@
       </ul>
 
       <!-- Desktop CTA -->
-      <div class="hidden md:flex items-center">
+      <div class="hidden lg:flex items-center">
         <a
           href="/#contact"
           class="font-grotesk text-sm font-semibold uppercase tracking-wider border border-orange-500 rounded-full px-6 py-2.5 text-white bg-orange-600 hover:bg-orange-700 hover:border-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 transition-colors shadow-sm shadow-orange-950/20"
@@ -33,7 +33,7 @@
 
       <!-- Mobile Hamburger -->
       <button
-        class="md:hidden flex flex-col gap-1.5 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 rounded-md"
+        class="lg:hidden flex flex-col gap-1.5 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 rounded-md"
         aria-label="Buka menu navigasi"
         @click="mobileOpen = !mobileOpen"
       >
@@ -61,7 +61,7 @@
     <!-- Mobile Dropdown -->
     <div
       v-if="mobileOpen"
-      class="md:hidden absolute top-full left-0 right-0 bg-stone-950 border-t border-stone-800 px-5 py-6 flex flex-col gap-5 shadow-xl shadow-stone-950/30"
+      class="lg:hidden absolute top-full left-0 right-0 bg-stone-950 border-t border-stone-800 px-5 py-6 flex flex-col gap-5 shadow-xl shadow-stone-950/30"
     >
       <a
         v-for="item in navItems"

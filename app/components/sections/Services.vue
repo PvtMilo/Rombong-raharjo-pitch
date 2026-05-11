@@ -2,7 +2,12 @@
   <section id="services" class="bg-stone-950 py-20 md:py-28">
     <div class="w-11/12 max-w-[100rem] mx-auto">
       <!-- Section header -->
-      <div class="section-padding mb-16">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+        class="section-padding mb-16"
+      >
         <h2
           class="font-grotesk font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
         >
@@ -15,6 +20,9 @@
         <div
           v-for="(service, i) in services"
           :key="service.title"
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
           class="section-padding py-14 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
         >
           <!-- Text side -->

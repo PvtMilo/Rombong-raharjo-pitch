@@ -1,7 +1,12 @@
 <template>
   <section id="faq" class="bg-stone-50 py-20 md:py-28 section-padding">
     <div class="w-11/12 max-w-[60rem] mx-auto">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+        class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12"
+      >
         <div class="max-w-3xl">
           <h2 class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]">
             Pertanyaan yang<br>

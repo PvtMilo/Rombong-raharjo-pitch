@@ -2,7 +2,12 @@
   <section id="portfolio" class="bg-stone-950 py-20 md:py-28 section-padding">
     <div class="w-11/12 max-w-[100rem] mx-auto">
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+    <div
+      v-motion
+      :initial="{ opacity: 0, y: 30 }"
+      :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+      class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
+    >
       <div>
         <h2 class="font-grotesk font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]">
           Proyek<br><span class="text-orange-400">Pilihan</span>
@@ -14,8 +19,12 @@
     <!-- Masonry-style 2-col grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
       <!-- Left column - tall item first, then small -->
-      <div class="flex flex-col gap-4 lg:gap-6">
-        <!-- Tall card -->
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+        class="flex flex-col gap-4 lg:gap-6"
+      >
         <div class="relative rounded-2xl overflow-hidden group shadow-2xl shadow-stone-950/30" style="aspect-ratio: 4/5;">
           <img
             src="/images/portfolio-1.jpg"
@@ -44,8 +53,12 @@
       </div>
 
       <!-- Right column - small first, then tall -->
-      <div class="flex flex-col gap-4 lg:gap-6">
-        <!-- Short card -->
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 700, delay: 150 } }"
+        class="flex flex-col gap-4 lg:gap-6"
+      >
         <div class="relative rounded-2xl overflow-hidden group shadow-2xl shadow-stone-950/30" style="aspect-ratio: 16/9;">
           <img
             src="/images/portfolio-2.jpg"

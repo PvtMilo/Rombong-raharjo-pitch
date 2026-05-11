@@ -3,7 +3,12 @@
     <div class="w-11/12 max-w-[100rem] mx-auto">
     <div class="max-w-3xl mx-auto">
       <!-- Header -->
-      <div class="text-center mb-14">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+        class="text-center mb-14"
+      >
         <h2 class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]">
           Mulai <span class="text-orange-600 underline decoration-orange-500 underline-offset-4">Proyek Anda</span>
         </h2>
@@ -13,7 +18,13 @@
       </div>
 
       <!-- Form -->
-      <form class="flex flex-col gap-5" @submit.prevent>
+      <form
+        v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 700, delay: 150 } }"
+        class="flex flex-col gap-5"
+        @submit.prevent
+      >
         <!-- Name + Email row -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="flex flex-col gap-2">

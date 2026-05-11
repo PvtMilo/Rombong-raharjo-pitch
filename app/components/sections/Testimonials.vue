@@ -3,7 +3,12 @@
     id="testimonials"
     class="bg-stone-50 py-20 md:py-28 section-padding border-b border-stone-200 overflow-hidden"
   >
-    <div class="w-11/12 max-w-[100rem] mx-auto mb-12">
+    <div
+      v-motion
+      :initial="{ opacity: 0, y: 30 }"
+      :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+      class="w-11/12 max-w-[100rem] mx-auto mb-12"
+    >
       <h2
         class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
       >
