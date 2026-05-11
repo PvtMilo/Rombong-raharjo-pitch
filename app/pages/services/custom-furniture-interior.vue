@@ -68,14 +68,13 @@
               <p class="text-xl md:text-2xl text-stone-600 leading-relaxed border-l-2 border-orange-500 pl-8 mb-10">
                 Setiap produk kami rancang dan produksi sendiri di workshop dengan kontrol kualitas ketat — dari desain, pemilihan material, hingga instalasi langsung di lokasi Anda.
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div v-for="p in pillars" :key="p.title"
-                  class="p-6 border border-stone-200 bg-stone-50 rounded-2xl flex flex-col gap-3 group hover:border-orange-300 hover:shadow-lg hover:shadow-stone-900/10 transition-all duration-300">
-                  <div class="w-10 h-10 rounded-full border border-orange-200 bg-orange-50 flex items-center justify-center mb-1">
-                    <span class="text-orange-600 text-lg">{{ p.icon }}</span>
+              <div class="flex flex-col divide-y divide-stone-200">
+                <div v-for="(p, idx) in pillars" :key="p.title" class="group flex items-start gap-6 py-6">
+                  <span class="font-mono text-xs font-bold text-stone-400 pt-0.5 flex-shrink-0 w-5">{{ String(idx + 1).padStart(2, '0') }}</span>
+                  <div class="flex flex-col gap-1.5">
+                    <h4 class="font-bold text-stone-950 text-sm uppercase tracking-wider">{{ p.title }}</h4>
+                    <p class="text-stone-500 text-sm leading-relaxed">{{ p.desc }}</p>
                   </div>
-                  <h4 class="font-bold text-stone-950 text-sm uppercase tracking-wider">{{ p.title }}</h4>
-                  <p class="text-stone-600 text-sm leading-relaxed">{{ p.desc }}</p>
                 </div>
               </div>
             </div>
@@ -170,12 +169,10 @@
             </div>
             <div class="flex flex-col">
               <div v-for="(item, idx) in detailItems" :key="item.title"
-                class="group flex gap-6 py-8 border-b border-stone-200 last:border-b-0 hover:bg-orange-50 -mx-4 px-4 transition-colors duration-200">
-                <div class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-stone-300 group-hover:border-orange-500 flex items-center justify-center text-sm font-bold text-stone-400 group-hover:text-orange-600 transition-colors mt-1">
-                  {{ String(idx + 1).padStart(2, '0') }}
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h4 class="font-bold text-stone-950 text-lg group-hover:text-orange-700 transition-colors">{{ item.title }}</h4>
+                class="group flex gap-6 py-7 border-b border-stone-200 last:border-b-0">
+                <span class="font-mono text-xs font-bold text-stone-400 pt-1 flex-shrink-0 w-5">{{ String(idx + 1).padStart(2, '0') }}</span>
+                <div class="flex flex-col gap-1.5">
+                  <h4 class="font-bold text-stone-950 text-base group-hover:text-orange-700 transition-colors">{{ item.title }}</h4>
                   <p class="text-stone-600 text-sm leading-relaxed">{{ item.desc }}</p>
                 </div>
               </div>
@@ -185,35 +182,32 @@
       </section>
 
       <!-- KEUNGGULAN -->
-      <section class="py-24 md:py-32 bg-white border-b border-stone-200 overflow-hidden">
+      <section class="py-24 md:py-32 bg-white border-b border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div class="relative">
-              <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl shadow-stone-900/10">
-                <img src="/images/portfolio-4.jpg" alt="Workshop Furniture"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
-              <div class="hidden md:block absolute -bottom-5 -right-5 w-40 h-40 border border-orange-300 pointer-events-none rounded-2xl" />
-              <div class="absolute bottom-6 left-6 bg-white border border-stone-200 p-5 max-w-xs shadow-lg rounded-xl">
-                <p class="font-bold text-orange-600 text-3xl mb-1">Custom</p>
-                <p class="text-stone-600 text-sm">Produksi sendiri di workshop dengan kontrol kualitas penuh</p>
-              </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div class="overflow-hidden aspect-[4/3] w-full bg-stone-100">
+              <img src="/images/portfolio-4.jpg" alt="Workshop Furniture"
+                class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out" />
             </div>
-            <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4">Keunggulan &amp; Nilai Tambah</p>
-              <h2 class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.2rem)] mb-8">
-                Kualitas<br /><span class="text-orange-600">Terjamin</span>
-              </h2>
-              <div class="border-l-2 border-orange-500 pl-6 mb-10">
-                <p class="text-xl text-stone-700 leading-relaxed italic">
-                  "Furnitur rancang-bangun yang menyatu sempurna dengan desain interior, menggunakan material terpilih, serta didukung dengan garansi pengerjaan untuk ketenangan pikiran Anda."
-                </p>
-              </div>
-              <div class="grid grid-cols-2 gap-6 mb-10">
-                <div v-for="v in values" :key="v.label"
-                  class="flex flex-col gap-2 p-6 border border-stone-200 bg-stone-50 rounded-2xl hover:border-orange-300 hover:shadow-md transition-all">
-                  <span class="text-3xl md:text-4xl font-bold text-stone-950 font-mono">{{ v.value }}</span>
-                  <span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{{ v.label }}</span>
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4">Keunggulan &amp; Nilai Tambah</p>
+                <h2 class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3rem)] mb-8">
+                  Kualitas<br /><span class="text-orange-600">Terjamin</span>
+                </h2>
+                <div class="border-l-2 border-orange-500 pl-6 mb-10">
+                  <p class="text-lg text-stone-600 leading-relaxed">
+                    Furnitur rancang-bangun yang menyatu sempurna dengan desain interior, menggunakan material terpilih, serta didukung dengan garansi pengerjaan untuk ketenangan pikiran Anda.
+                  </p>
+                </div>
+                <div class="flex flex-col divide-y divide-stone-200 mb-10">
+                  <div v-for="v in values" :key="v.label" class="flex items-start gap-5 py-4">
+                    <span class="w-1 h-1 rounded-full bg-orange-500 flex-shrink-0 mt-2" />
+                    <div>
+                      <span class="font-bold text-stone-950 text-sm uppercase tracking-wide">{{ v.label }}</span>
+                      <span class="text-stone-500 text-sm"> — {{ v.desc }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <BaseButton href="https://wa.me/6282242058673" variant="primary" arrow>Diskusikan Kebutuhan Anda</BaseButton>
@@ -283,9 +277,9 @@ const detailItems = [
 ];
 
 const values = [
-  { value: "100%", label: "Custom Made" },
-  { value: "Own", label: "Workshop" },
-  { value: "Ketat", label: "Quality Control" },
-  { value: "Garansi", label: "Pengerjaan" },
+  { label: "100% Custom Made", desc: "Setiap produk dirancang khusus sesuai dimensi, fungsi, dan estetika ruang Anda." },
+  { label: "Workshop Sendiri", desc: "Produksi in-house dengan kontrol kualitas di setiap tahap, tanpa subkontraktor." },
+  { label: "Material Terpilih", desc: "Kayu solid, plywood, HPL, dan metal dipilih berdasarkan kebutuhan dan anggaran." },
+  { label: "Garansi Pengerjaan", desc: "Setiap produk disertai garansi resmi untuk ketenangan pikiran jangka panjang." },
 ];
 </script>

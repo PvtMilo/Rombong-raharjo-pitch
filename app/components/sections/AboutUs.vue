@@ -8,7 +8,12 @@
         class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
       >
         <!-- Left: Image -->
-        <div class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-xl shadow-stone-900/10">
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: -40 }"
+          :visible-once="{ opacity: 1, x: 0, transition: { duration: 700, ease: 'easeOut' } }"
+          class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-xl shadow-stone-900/10"
+        >
           <img
             src="/images/portfolio-2.jpg"
             alt="Proyek Rombong Raharjo"
@@ -17,7 +22,11 @@
         </div>
 
         <!-- Right: Text -->
-        <div>
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: 40 }"
+          :visible-once="{ opacity: 1, x: 0, transition: { duration: 700, ease: 'easeOut', delay: 100 } }"
+        >
           <h2
             class="font-grotesk font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)] mb-8"
           >

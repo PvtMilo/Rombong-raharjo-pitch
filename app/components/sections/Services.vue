@@ -2,12 +2,22 @@
   <section id="services" class="bg-stone-950 py-20 md:py-28">
     <div class="w-11/12 max-w-[100rem] mx-auto">
       <!-- Section header -->
-      <div class="section-padding mb-16">
-        <h2
-          class="font-grotesk font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
-        >
-          Layanan <span class="text-orange-400">Utama Kami</span>
-        </h2>
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 32 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 650, ease: 'easeOut' } }"
+        class="section-padding mb-0"
+      >
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-10 md:pb-14 border-b border-stone-800">
+          <h2
+            class="font-grotesk font-bold text-stone-50 uppercase leading-none tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]"
+          >
+            Layanan <span class="text-orange-400">Utama Kami</span>
+          </h2>
+          <p class="font-grotesk text-stone-500 text-sm leading-relaxed max-w-xs md:text-right">
+            Tiga disiplin yang kami kuasai — dari konsep hingga serah terima.
+          </p>
+        </div>
       </div>
 
       <!-- Alternating service blocks -->
@@ -15,6 +25,9 @@
         <div
           v-for="(service, i) in services"
           :key="service.title"
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 650, ease: 'easeOut' } }"
           class="section-padding py-14 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
         >
           <!-- Text side -->
@@ -42,8 +55,11 @@
                 {{ feat }}
               </li>
             </ul>
-            <p class="font-grotesk text-stone-300 text-sm leading-relaxed mb-10 max-w-lg">
-              <strong class="text-stone-50 font-semibold">Keunggulan:</strong> {{ service.keunggulan }}
+            <p
+              class="font-grotesk text-stone-300 text-sm leading-relaxed mb-10 max-w-lg"
+            >
+              <strong class="text-stone-50 font-semibold">Keunggulan:</strong>
+              {{ service.keunggulan }}
             </p>
             <BaseButton :href="service.link" variant="outline-light" arrow>
               {{ service.buttonText }}
@@ -51,7 +67,9 @@
           </div>
 
           <!-- Image side -->
-          <div class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-2xl shadow-stone-950/30">
+          <div
+            class="rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-2xl shadow-stone-950/30"
+          >
             <img
               :src="service.img"
               :alt="service.title"
@@ -75,7 +93,8 @@ const services = [
       "Renovasi & Pembangunan Konstruksi",
       "Manajemen Proyek & Pengawasan",
     ],
-    keunggulan: "proses desain dan pembangunan yang terintegrasi, pengerjaan detail, serta kualitas hasil yang terukur untuk hunian maupun bangunan komersial.",
+    keunggulan:
+      "proses desain dan pembangunan yang terintegrasi, pengerjaan detail, serta kualitas hasil yang terukur untuk hunian maupun bangunan komersial.",
     buttonText: "KONSULTASI SEKARANG",
     link: "/services/jasa-kontraktor-arsitektur",
     img: "/images/service-design.jpg",
@@ -89,7 +108,8 @@ const services = [
       "Visualisasi 3D Interior",
       "Pembangunan & Finishing Interior",
     ],
-    keunggulan: "desain interior yang menyesuaikan gaya hidup, karakter brand, serta penggunaan ruang agar tampil modern, nyaman, dan optimal.",
+    keunggulan:
+      "desain interior yang menyesuaikan gaya hidup, karakter brand, serta penggunaan ruang agar tampil modern, nyaman, dan optimal.",
     buttonText: "HUBUNGI KAMI",
     link: "/services/jasa-desain-interior",
     img: "/images/service-interior.jpg",
@@ -103,7 +123,8 @@ const services = [
       "Material & Finishing Berkualitas",
       "Produksi & Instalasi Profesional",
     ],
-    keunggulan: "furniture dibuat custom dengan material pilihan, pengerjaan detail, serta hasil akhir yang menyatu dengan desain interior dan kebutuhan ruang.",
+    keunggulan:
+      "furniture dibuat custom dengan material pilihan, pengerjaan detail, serta hasil akhir yang menyatu dengan desain interior dan kebutuhan ruang.",
     buttonText: "KONSULTASI FURNITURE",
     link: "/services/custom-furniture-interior",
     img: "/images/service-construction.jpg",

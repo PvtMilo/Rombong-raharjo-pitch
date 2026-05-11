@@ -2,20 +2,30 @@
   <section id="blog" class="bg-stone-950 py-20 md:py-28 section-padding">
     <div class="w-11/12 max-w-[100rem] mx-auto">
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+    <div
+      v-motion
+      :initial="{ opacity: 0, y: 32 }"
+      :visible-once="{ opacity: 1, y: 0, transition: { duration: 650, ease: 'easeOut' } }"
+      class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
+    >
       <div>
         <h2 class="font-grotesk font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4.5vw,3.5rem)]">
           Insight <span class="text-orange-400">Terbaru</span>
         </h2>
       </div>
-      <BaseButton href="#" variant="outline-light" arrow>Semua Artikel</BaseButton>
+      <div class="self-start">
+        <BaseButton href="#" variant="outline-light" arrow>Semua Artikel</BaseButton>
+      </div>
     </div>
 
     <!-- 2x2 article grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <article
-        v-for="post in posts"
+        v-for="(post, i) in posts"
         :key="post.title"
+        v-motion
+        :initial="{ opacity: 0, y: 36 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, ease: 'easeOut', delay: i * 80 } }"
         class="group flex flex-col rounded-2xl overflow-hidden border border-stone-200 bg-white hover:border-orange-300 hover:shadow-xl hover:shadow-stone-950/20 transition-colors"
       >
         <!-- Thumbnail -->

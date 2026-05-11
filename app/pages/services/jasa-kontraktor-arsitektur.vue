@@ -146,26 +146,18 @@
                 desain dengan ketelitian pelaksanaan di lapangan — mulai survei
                 lahan, gambar 2D/3D, perizinan, hingga bangunan siap huni.
               </p>
-              <!-- 3 pillars -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <!-- 3 pillars — numbered rows -->
+              <div class="flex flex-col divide-y divide-stone-200">
                 <div
-                  v-for="p in pillars"
+                  v-for="(p, idx) in pillars"
                   :key="p.title"
-                  class="p-6 border border-stone-200 bg-stone-50 rounded-2xl flex flex-col gap-3 group hover:border-orange-300 hover:shadow-lg hover:shadow-stone-900/10 transition-all duration-300"
+                  class="group flex items-start gap-6 py-6"
                 >
-                  <div
-                    class="w-10 h-10 rounded-full border border-orange-200 bg-orange-50 flex items-center justify-center mb-1"
-                  >
-                    <span class="text-orange-600 text-lg">{{ p.icon }}</span>
+                  <span class="font-mono text-xs font-bold text-stone-400 pt-0.5 flex-shrink-0 w-5">{{ String(idx + 1).padStart(2, '0') }}</span>
+                  <div class="flex flex-col gap-1.5">
+                    <h4 class="font-bold text-stone-950 text-sm uppercase tracking-wider">{{ p.title }}</h4>
+                    <p class="text-stone-500 text-sm leading-relaxed">{{ p.desc }}</p>
                   </div>
-                  <h4
-                    class="font-bold text-stone-950 text-sm uppercase tracking-wider"
-                  >
-                    {{ p.title }}
-                  </h4>
-                  <p class="text-stone-600 text-sm leading-relaxed">
-                    {{ p.desc }}
-                  </p>
                 </div>
               </div>
             </div>
@@ -375,22 +367,16 @@
               <div
                 v-for="(item, idx) in detailScopes"
                 :key="item.title"
-                class="group flex gap-6 py-8 border-b border-stone-200 last:border-b-0 hover:bg-orange-50 -mx-4 px-4 transition-colors duration-200"
+                class="group flex gap-6 py-7 border-b border-stone-200 last:border-b-0"
               >
-                <div
-                  class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-stone-300 group-hover:border-orange-500 flex items-center justify-center text-sm font-bold text-stone-400 group-hover:text-orange-600 transition-colors mt-1"
-                >
-                  {{ String(idx + 1).padStart(2, "0") }}
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h4
-                    class="font-bold text-stone-950 text-lg group-hover:text-orange-700 transition-colors"
-                  >
+                <span class="font-mono text-xs font-bold text-stone-400 pt-1 flex-shrink-0 w-5">
+                  {{ String(idx + 1).padStart(2, '0') }}
+                </span>
+                <div class="flex flex-col gap-1.5">
+                  <h4 class="font-bold text-stone-950 text-base group-hover:text-orange-700 transition-colors">
                     {{ item.title }}
                   </h4>
-                  <p class="text-stone-600 text-sm leading-relaxed">
-                    {{ item.desc }}
-                  </p>
+                  <p class="text-stone-600 text-sm leading-relaxed">{{ item.desc }}</p>
                 </div>
               </div>
             </div>
@@ -401,140 +387,78 @@
       <!-- ===================== DELIVERABLES ===================== -->
       <section class="py-24 md:py-32 bg-stone-950 border-b border-stone-800">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="max-w-2xl mb-16">
-            <p
-              class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-4"
-            >
-              Output &amp; Deliverables
-            </p>
-            <h2
-              class="font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.2rem)] mb-5"
-            >
-              Yang Anda<br /><span class="text-orange-400">Terima</span>
-            </h2>
-            <p class="text-stone-300 text-lg leading-relaxed">
-              Setiap deliverable didokumentasikan dengan standar tinggi dan
-              diserahkan tepat waktu.
-            </p>
-          </div>
-
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-          >
-            <div
-              v-for="(d, idx) in deliverables"
-              :key="d.title"
-              class="group p-7 bg-stone-900 border border-stone-800 hover:border-orange-500/50 transition-all duration-300 flex flex-col gap-4"
-            >
-              <div
-                class="w-10 h-10 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-stone-950 transition-colors duration-300"
-              >
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            <!-- Left: heading -->
+            <div class="lg:col-span-4">
+              <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-4">Output &amp; Deliverables</p>
+              <h2 class="font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3rem)] mb-5">
+                Yang Anda<br /><span class="text-orange-400">Terima</span>
+              </h2>
+              <p class="text-stone-400 text-sm leading-relaxed">
+                Setiap deliverable didokumentasikan dengan standar tinggi dan diserahkan tepat waktu.
+              </p>
+            </div>
+            <!-- Right: typographic list -->
+            <div class="lg:col-span-8 lg:border-l lg:border-stone-800 lg:pl-16">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-0 divide-y divide-stone-800 sm:divide-y-0">
+                <div
+                  v-for="(d, idx) in deliverables"
+                  :key="d.title"
+                  class="group flex items-start gap-5 py-6 sm:px-6 sm:border-b sm:border-stone-800"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                  <span class="font-mono text-xs font-bold text-stone-700 pt-0.5 flex-shrink-0 w-5">{{ String(idx + 1).padStart(2, '0') }}</span>
+                  <div class="flex flex-col gap-1">
+                    <h4 class="font-bold text-stone-100 text-sm uppercase tracking-wide group-hover:text-orange-300 transition-colors">{{ d.title }}</h4>
+                    <p class="text-stone-500 text-xs leading-relaxed">{{ d.desc }}</p>
+                  </div>
+                </div>
               </div>
-              <h4
-                class="font-bold text-stone-50 text-base leading-snug group-hover:text-orange-300 transition-colors"
-              >
-                {{ d.title }}
-              </h4>
-              <p class="text-stone-400 text-sm leading-relaxed">{{ d.desc }}</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ===================== KEUNGGULAN ===================== -->
-      <section
-        class="py-24 md:py-32 bg-white border-b border-stone-200 overflow-hidden"
-      >
+      <section class="py-24 md:py-32 bg-white border-b border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-          >
-            <!-- image side -->
-            <div class="relative">
-              <div
-                class="aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl shadow-stone-900/10"
-              >
-                <img
-                  src="/images/hero-bg.jpg"
-                  alt="Koordinasi Proyek"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <!-- decorative frame -->
-              <div
-                class="hidden md:block absolute -bottom-5 -right-5 w-40 h-40 border border-orange-300 pointer-events-none rounded-2xl"
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+            <!-- Image — sharp, full-bleed, no radius -->
+            <div class="overflow-hidden aspect-[4/3] w-full bg-stone-100">
+              <img
+                src="/images/hero-bg.jpg"
+                alt="Koordinasi Proyek"
+                class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out"
               />
-              <!-- callout badge -->
-              <div
-                class="absolute bottom-6 left-6 bg-white border border-stone-200 p-5 max-w-xs shadow-lg rounded-xl"
-              >
-                <p class="font-bold text-orange-600 text-3xl mb-1">Presisi</p>
-                <p class="text-stone-600 text-sm">
-                  Eksekusi terukur dengan kontrol kualitas ketat di setiap fase
-                  proyek
-                </p>
-              </div>
             </div>
 
-            <!-- content side -->
-            <div>
-              <p
-                class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4"
-              >
-                Keunggulan &amp; Nilai Tambah
-              </p>
-              <h2
-                class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.2rem)] mb-8"
-              >
-                Koordinasi<br /><span class="text-orange-600">Terpadu</span>
-              </h2>
+            <!-- Content -->
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4">Keunggulan &amp; Nilai Tambah</p>
+                <h2 class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3rem)] mb-8">
+                  Koordinasi<br /><span class="text-orange-600">Terpadu</span>
+                </h2>
 
-              <!-- highlight quote -->
-              <div class="border-l-2 border-orange-500 pl-6 mb-10">
-                <p class="text-xl text-stone-700 leading-relaxed italic">
-                  "Kombinasi desain dan pelaksanaan mengurangi kesenjangan
-                  antara perancang dan pelaksana — koordinasi lebih rapi,
-                  kontrol biaya lebih terjaga, risiko perubahan desain di
-                  lapangan terminimalisir."
-                </p>
-              </div>
+                <div class="border-l-2 border-orange-500 pl-6 mb-10">
+                  <p class="text-lg text-stone-600 leading-relaxed">
+                    Kombinasi desain dan pelaksanaan mengurangi kesenjangan antara perancang dan pelaksana — koordinasi lebih rapi, kontrol biaya lebih terjaga, risiko perubahan desain di lapangan terminimalisir.
+                  </p>
+                </div>
 
-              <div class="grid grid-cols-2 gap-6 mb-10">
-                <div
-                  v-for="v in values"
-                  :key="v.label"
-                  class="flex flex-col gap-2 p-6 border border-stone-200 bg-stone-50 rounded-2xl hover:border-orange-300 hover:shadow-md transition-all"
-                >
-                  <span
-                    class="text-3xl md:text-4xl font-bold text-stone-950 font-mono"
-                    >{{ v.value }}</span
-                  >
-                  <span
-                    class="text-xs uppercase tracking-widest text-stone-500 font-semibold"
-                    >{{ v.label }}</span
-                  >
+                <!-- Statement list — replaces fake stats -->
+                <div class="flex flex-col divide-y divide-stone-200 mb-10">
+                  <div v-for="v in values" :key="v.label" class="flex items-start gap-5 py-4">
+                    <span class="w-1 h-1 rounded-full bg-orange-500 flex-shrink-0 mt-2" />
+                    <div>
+                      <span class="font-bold text-stone-950 text-sm uppercase tracking-wide">{{ v.label }}</span>
+                      <span class="text-stone-500 text-sm"> — {{ v.desc }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <BaseButton
-                href="https://wa.me/6282242058673"
-                variant="primary"
-                arrow
-                >Diskusikan Proyek Anda</BaseButton
-              >
+              <BaseButton href="https://wa.me/6282242058673" variant="primary" arrow>Diskusikan Proyek Anda</BaseButton>
             </div>
           </div>
         </div>
@@ -695,10 +619,10 @@ const deliverables = [
 ];
 
 const values = [
-  { value: "1×", label: "Satu Tim Terpadu" },
-  { value: "0", label: "Gap Komunikasi" },
-  { value: "100%", label: "Transparansi Biaya" },
-  { value: "Tepat", label: "Waktu & Mutu" },
+  { label: "Satu Tim Terpadu", desc: "Desainer dan pelaksana dalam satu komando — tidak ada gap komunikasi antar pihak." },
+  { label: "Transparansi Biaya", desc: "RAB dan laporan progres diserahkan secara berkala tanpa biaya tersembunyi." },
+  { label: "Kontrol Kualitas", desc: "Pengawasan ketat di setiap fase dari pondasi hingga finishing akhir." },
+  { label: "Tepat Waktu", desc: "Jadwal kerja terstruktur dengan milestone yang dapat diverifikasi klien." },
 ];
 
 const contactInfo = [
