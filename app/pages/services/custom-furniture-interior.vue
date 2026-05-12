@@ -165,7 +165,7 @@
         </div>
       </section>
 
-      <!-- ===== PRODUCT CATEGORIES — typographic grid ===== -->
+      <!-- ===== PRODUCT CATEGORIES — numbered full-width rows ===== -->
       <section class="bg-stone-950 py-20 md:py-28 border-b border-stone-800">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
           <div class="mb-14">
@@ -181,53 +181,40 @@
             </h2>
           </div>
 
-          <!-- 5-item asymmetric grid -->
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-stone-800 divide-y sm:divide-y-0 divide-stone-800"
-          >
+          <!-- Full-width numbered rows -->
+          <div class="flex flex-col divide-y divide-stone-800 border-t border-stone-800">
             <div
               v-for="(cat, idx) in categories"
               :key="cat.name"
-              class="group relative flex flex-col gap-5 p-8 md:p-10 border-stone-800 hover:bg-stone-900 transition-colors duration-300"
-              :class="{
-                'sm:border-r': idx % 2 === 0 && idx < categories.length - 1,
-                'lg:border-r': idx % 3 !== 2,
-                'border-b':
-                  idx < categories.length - (categories.length % 3 || 3),
-              }"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
             >
-              <!-- Hover top accent -->
-              <div
-                class="absolute top-0 left-0 right-0 h-px bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              />
-
-              <!-- Category letter / index -->
-              <span
-                class="text-xs font-bold font-mono text-stone-700 group-hover:text-orange-500 transition-colors uppercase tracking-widest"
-              >
-                {{ String.fromCharCode(65 + idx) }}
-              </span>
-
-              <div>
-                <h3
-                  class="text-xl md:text-2xl font-bold text-stone-100 uppercase tracking-tight mb-3 group-hover:text-orange-300 transition-colors"
-                >
-                  {{ cat.name }}
-                </h3>
-                <p class="text-stone-500 text-sm leading-relaxed">
-                  {{ cat.desc }}
-                </p>
+              <!-- Step number -->
+              <div class="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2 lg:pt-1">
+                <span class="text-3xl font-bold font-mono text-orange-500 leading-none select-none">
+                  {{ String(idx + 1).padStart(2, "0") }}
+                </span>
               </div>
 
-              <!-- Spec tags -->
-              <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                <span
-                  v-for="tag in cat.tags"
-                  :key="tag"
-                  class="text-[10px] font-semibold uppercase tracking-wider text-stone-500 border border-stone-800 px-2.5 py-1 group-hover:border-stone-700 transition-colors"
-                >
-                  {{ tag }}
-                </span>
+              <!-- Name + desc -->
+              <div class="lg:col-span-5">
+                <h3 class="text-xl md:text-2xl font-bold text-stone-50 uppercase tracking-tight mb-4">
+                  {{ cat.name }}
+                </h3>
+                <p class="text-stone-300 text-base leading-relaxed">{{ cat.desc }}</p>
+              </div>
+
+              <!-- Spec tags as list -->
+              <div class="lg:col-span-6">
+                <ul class="flex flex-col gap-4">
+                  <li
+                    v-for="tag in cat.tags"
+                    :key="tag"
+                    class="flex items-start gap-4"
+                  >
+                    <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
+                    <span class="text-stone-300 text-base leading-relaxed">{{ tag }}</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

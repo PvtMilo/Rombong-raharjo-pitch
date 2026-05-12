@@ -163,100 +163,56 @@
         </div>
       </section>
 
-      <!-- ===== SCOPE — expandable numbered panels ===== -->
+      <!-- ===== SCOPE — numbered full-width rows ===== -->
       <section class="bg-stone-950 py-20 md:py-28 border-b border-stone-800">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="flex items-end justify-between mb-14">
-            <div>
-              <p
-                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
-              >
-                Lingkup Pekerjaan
-              </p>
-              <h2
-                class="text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight"
-              >
-                Apa yang Kami<br /><span class="text-orange-400">Kerjakan</span>
-              </h2>
-            </div>
+          <div class="mb-14">
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
+            >
+              Lingkup Pekerjaan
+            </p>
+            <h2
+              class="text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight"
+            >
+              Apa yang Kami <span class="text-orange-400">Kerjakan</span>
+            </h2>
           </div>
 
-          <!-- Accordion panels -->
-          <div
-            class="flex flex-col divide-y divide-stone-800 border-t border-stone-800"
-          >
+          <!-- Full-width numbered rows -->
+          <div class="flex flex-col divide-y divide-stone-800 border-t border-stone-800">
             <div
               v-for="(scope, idx) in scopes"
               :key="scope.title"
-              class="group"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
             >
-              <button
-                @click="toggleScope(idx)"
-                class="w-full flex items-start gap-6 md:gap-10 py-8 text-left transition-colors duration-200 hover:text-stone-50"
-                :aria-expanded="openScope === idx"
-              >
-                <!-- Number -->
-                <span
-                  class="text-[clamp(2rem,4vw,3.5rem)] font-bold font-mono leading-none text-stone-700 group-hover:text-stone-500 transition-colors w-16 flex-shrink-0 select-none"
-                >
+              <!-- Step number -->
+              <div class="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2 lg:pt-1">
+                <span class="text-3xl font-bold font-mono text-orange-500 leading-none select-none">
                   {{ String(idx + 1).padStart(2, "0") }}
                 </span>
-                <!-- Title + toggle -->
-                <div
-                  class="flex flex-1 items-center justify-between gap-4 pt-1"
-                >
-                  <h3
-                    class="text-xl md:text-2xl font-bold text-stone-200 group-hover:text-stone-50 uppercase tracking-tight transition-colors"
-                  >
-                    {{ scope.title }}
-                  </h3>
-                  <div
-                    class="flex-shrink-0 w-8 h-8 border border-stone-700 flex items-center justify-center text-stone-400 transition-transform duration-300"
-                    :class="
-                      openScope === idx
-                        ? 'rotate-45 border-orange-500 text-orange-400'
-                        : ''
-                    "
-                  >
-                    <svg
-                      class="w-4 h-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
-                        d="M12 4v16m8-8H4"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </button>
+              </div>
 
-              <!-- Expanded content -->
-              <div
-                class="overflow-hidden transition-all duration-500"
-                :class="openScope === idx ? 'max-h-96 pb-10' : 'max-h-0'"
-              >
-                <div
-                  class="pl-[calc(1rem+4rem+1.5rem)] md:pl-[calc(1rem+10rem)] grid grid-cols-1 md:grid-cols-2 gap-8"
-                >
-                  <p class="text-stone-400 text-base leading-relaxed">
-                    {{ scope.desc }}
-                  </p>
-                  <ul class="flex flex-col gap-3">
-                    <li
-                      v-for="f in scope.features"
-                      :key="f"
-                      class="flex items-start gap-4 text-sm text-stone-300"
-                    >
-                      <span class="mt-2 w-4 h-px bg-orange-500 flex-shrink-0" />
-                      {{ f }}
-                    </li>
-                  </ul>
-                </div>
+              <!-- Title + desc -->
+              <div class="lg:col-span-5">
+                <h3 class="text-xl md:text-2xl font-bold text-stone-50 uppercase tracking-tight mb-4">
+                  {{ scope.title }}
+                </h3>
+                <p class="text-stone-300 text-base leading-relaxed">{{ scope.desc }}</p>
+              </div>
+
+              <!-- Feature list -->
+              <div class="lg:col-span-6">
+                <ul class="flex flex-col gap-4">
+                  <li
+                    v-for="f in scope.features"
+                    :key="f"
+                    class="flex items-start gap-4"
+                  >
+                    <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
+                    <span class="text-stone-300 text-base leading-relaxed">{{ f }}</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
