@@ -3,7 +3,12 @@
     <!-- ===== PRODUCT SHOWCASE ===== -->
     <div class="w-11/12 max-w-[100rem] mx-auto pt-20 md:pt-28 pb-0">
       <!-- Asymmetric image grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-3">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+        class="grid grid-cols-1 lg:grid-cols-12 gap-3"
+      >
         <!-- Large feature image -->
         <div class="lg:col-span-7 overflow-hidden aspect-[4/3]">
           <img

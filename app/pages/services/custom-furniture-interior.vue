@@ -133,7 +133,12 @@
 
       <!-- ===== SERVICE SHOWCASE ===== -->
       <section class="bg-white py-12 md:py-16 border-b border-stone-200">
-        <div class="w-11/12 max-w-[100rem] mx-auto section-padding border">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+          class="w-11/12 max-w-[100rem] mx-auto section-padding border"
+        >
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="w-full overflow-hidden aspect-[3/2]">
               <img
@@ -170,11 +175,17 @@
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
           <div class="mb-14">
             <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
               class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
             >
               Yang Kami Produksi
             </p>
             <h2
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
               class="text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight"
             >
               Kategori <span class="text-orange-400">Produk</span>
@@ -188,6 +199,9 @@
             <div
               v-for="(cat, idx) in categories"
               :key="cat.name"
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: idx * 100 } }"
               class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
             >
               <!-- Step number -->
@@ -255,6 +269,9 @@
             <div
               v-for="(step, idx) in processSteps"
               :key="step.title"
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: idx * 80 } }"
               class="relative flex flex-col gap-4 pt-6 pb-10 pr-8 border-t-2"
               :class="idx % 2 === 0 ? 'border-orange-500' : 'border-stone-300'"
             >
@@ -328,6 +345,9 @@
                 <div
                   v-for="m in materials"
                   :key="m.name"
+                  v-motion
+                  :initial="{ opacity: 0, y: 20 }"
+                  :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
                   class="group grid grid-cols-3 py-5 gap-4 hover:bg-stone-900 -mx-4 px-4 transition-colors duration-200"
                 >
                   <h4
@@ -351,8 +371,12 @@
       <!-- ===== CTA BAND ===== -->
       <section class="bg-white py-28 md:py-40 border-t border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <!-- Centered block -->
-          <div class="text-center">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30 }"
+            :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+            class="text-center"
+          >
             <p
               class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-10"
             >

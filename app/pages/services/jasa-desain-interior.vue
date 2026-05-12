@@ -134,7 +134,12 @@
 
       <!-- ===== SERVICE SHOWCASE ===== -->
       <section class="bg-white py-12 md:py-16 border-b border-stone-200">
-        <div class="w-11/12 max-w-[100rem] mx-auto section-padding border">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+          class="w-11/12 max-w-[100rem] mx-auto section-padding border"
+        >
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="w-full overflow-hidden aspect-[3/2]">
               <img
@@ -171,11 +176,17 @@
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
           <div class="mb-14">
             <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
               class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
             >
               Lingkup Layanan
             </p>
             <h2
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
               class="text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight"
             >
               Apa yang Kami <span class="text-orange-400">Kerjakan</span>
@@ -189,6 +200,9 @@
             <div
               v-for="(scope, idx) in scopes"
               :key="scope.title"
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: idx * 100 } }"
               class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
             >
               <!-- Step number + label -->
@@ -258,6 +272,9 @@
             <div
               v-for="(item, idx) in detailScopes"
               :key="item.title"
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, delay: idx * 60 } }"
               class="group grid grid-cols-1 md:grid-cols-12 py-8 gap-6 hover:bg-orange-50 -mx-4 px-4 transition-colors duration-200"
             >
               <!-- Number -->
@@ -316,6 +333,9 @@
               <div
                 v-for="(d, idx) in deliverables"
                 :key="d.title"
+                v-motion
+                :initial="{ opacity: 0, y: 20 }"
+                :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, delay: idx * 60 } }"
                 class="flex items-start gap-6 py-6"
               >
                 <span
@@ -345,8 +365,12 @@
       <section class="bg-white py-28 md:py-40 border-t border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
 
-          <!-- Centered block -->
-          <div class="text-center">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30 }"
+            :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+            class="text-center"
+          >
             <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-10">
               Wujudkan Ruang Ideal Anda
             </p>

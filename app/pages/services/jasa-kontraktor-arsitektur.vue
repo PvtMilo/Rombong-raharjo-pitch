@@ -131,7 +131,12 @@
 
       <!-- ===== SERVICE SHOWCASE ===== -->
       <section class="bg-white py-12 md:py-16 border-b border-stone-200">
-        <div class="w-11/12 max-w-[100rem] mx-auto section-padding border">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
+          class="w-11/12 max-w-[100rem] mx-auto section-padding border"
+        >
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="w-full overflow-hidden aspect-[3/2]">
               <img
@@ -168,11 +173,17 @@
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
           <div class="mb-14">
             <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
               class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
             >
               Lingkup Pekerjaan
             </p>
             <h2
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
               class="text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight"
             >
               Apa yang Kami <span class="text-orange-400">Kerjakan</span>
@@ -184,6 +195,9 @@
             <div
               v-for="(scope, idx) in scopes"
               :key="scope.title"
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: idx * 100 } }"
               class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
             >
               <!-- Step number -->
@@ -226,11 +240,17 @@
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
           <div class="mb-14">
             <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
               class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-3"
             >
               Alur Kerja
             </p>
             <h2
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
               class="text-[clamp(2rem,4vw,3rem)] font-bold uppercase tracking-tight text-stone-950 leading-tight"
             >
               Proses <span class="text-orange-600">Terstruktur</span>
@@ -242,6 +262,9 @@
             <div
               v-for="(step, idx) in processSteps"
               :key="step.title"
+              v-motion
+              :initial="{ opacity: 0, y: 30 }"
+              :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: idx * 80 } }"
               class="relative flex flex-col gap-4 pt-6 pb-10 pr-8 border-t-2 border-stone-300"
               :class="idx % 2 === 0 ? 'border-orange-500' : 'border-stone-300'"
             >
@@ -275,6 +298,9 @@
             <!-- Left: heading -->
             <div class="lg:col-span-4 lg:sticky lg:top-32">
               <p
+                v-motion
+                :initial="{ opacity: 0, y: 20 }"
+                :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
                 class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
               >
                 Output &amp; Deliverables
@@ -298,10 +324,11 @@
                 <div
                   v-for="(d, idx) in deliverables"
                   :key="d.title"
+                  v-motion
+                  :initial="{ opacity: 0, y: 20 }"
+                  :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, delay: idx * 60 } }"
                   class="flex gap-5 py-7 pr-8"
-                  :class="
-                    idx % 2 !== 0 ? 'sm:border-l border-stone-800 sm:pl-8' : ''
-                  "
+                  :class="idx % 2 !== 0 ? 'sm:border-l border-stone-800 sm:pl-8' : ''"
                 >
                   <span
                     class="text-stone-700 text-xs font-mono font-bold mt-0.5 select-none flex-shrink-0"
@@ -327,8 +354,12 @@
       <section class="bg-white py-28 md:py-40 border-t border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
 
-          <!-- Centered block -->
-          <div class="text-center">
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 30 }"
+            :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+            class="text-center"
+          >
             <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-10">
               Siap Membangun?
             </p>
