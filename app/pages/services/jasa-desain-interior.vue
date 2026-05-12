@@ -1,152 +1,233 @@
 <template>
-  <div class="bg-stone-950 min-h-screen flex flex-col font-grotesk text-stone-300">
+  <div
+    class="bg-stone-950 min-h-screen flex flex-col font-grotesk text-stone-300"
+  >
     <LayoutNavbar />
-    <main class="flex-1">
 
-      <!-- HEADER -->
-      <header class="pt-20 bg-stone-950">
-        <div class="grid grid-cols-4 gap-0.5 bg-stone-900">
-          <div class="relative overflow-hidden bg-stone-800">
-            <img src="/images/service-interior.jpg" alt="Desain Interior"
-              class="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-500 scale-110 hover:scale-100" />
-          </div>
-          <div class="relative overflow-hidden bg-stone-800">
-            <img src="/images/portfolio-1.jpg" alt="Interior Hunian"
-              class="w-full h-full object-cover object-center brightness-90 hover:brightness-100 transition-all duration-500 scale-110 hover:scale-100" />
-          </div>
-          <div class="relative overflow-hidden bg-stone-950 flex items-center justify-center">
-            <img src="/images/service-interior.jpg" alt=""
-              class="absolute inset-0 w-full h-full object-cover opacity-40 brightness-90 transition-all duration-500 scale-110 hover:scale-100" />
-            <div class="absolute inset-0 bg-gradient-to-br from-orange-950/60 to-transparent" />
-            <div class="relative z-10 flex flex-col items-center gap-1">
-              <div class="w-10 h-10 border-[3px] border-orange-400 rotate-45" />
-              <div class="w-7 h-7 border-[3px] border-orange-400 rotate-45 -mt-5" />
+    <main class="flex-1">
+      <!-- ===== HERO ===== -->
+      <header
+        class="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden"
+      >
+        <img
+          src="/images/service-interior.jpg"
+          alt="Desain Interior"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          fetchpriority="high"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/55 to-stone-950/10"
+        />
+
+        <!-- Breadcrumb -->
+        <div class="absolute top-0 left-0 right-0 pt-28 px-6 md:px-16">
+          <nav
+            class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-stone-400"
+          >
+            <a href="/" class="hover:text-stone-200 transition-colors"
+              >Beranda</a
+            >
+            <span class="text-stone-700">/</span>
+            <span class="text-orange-400">Desain Interior</span>
+          </nav>
+        </div>
+
+        <!-- Service tag — upper right -->
+        <div class="absolute top-28 right-6 md:right-16">
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 border border-stone-700 px-3 py-1.5"
+          >
+            Interior Design &amp; Build
+          </span>
+        </div>
+
+        <!-- Title block — bottom left -->
+        <div
+          class="absolute bottom-0 left-0 right-0 px-6 md:px-16 pb-14 md:pb-20"
+        >
+          <div class="max-w-[100rem] mx-auto">
+            <!-- Thin horizontal rule -->
+            <div class="w-12 h-px bg-orange-500 mb-6" />
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-5"
+            >
+              Layanan Utama
+            </p>
+            <div
+              class="flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+            >
+              <h1
+                class="text-[clamp(3rem,7vw,7rem)] font-bold leading-[0.95] tracking-tight text-stone-50 uppercase"
+              >
+                Desain <span class="text-orange-400">Interior</span>
+              </h1>
+              <a
+                href="https://wa.me/6282242058673"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-shrink-0 inline-flex items-center gap-3 border border-stone-50/30 hover:border-orange-400 text-stone-300 hover:text-orange-400 text-xs font-bold uppercase tracking-widest px-7 py-4 transition-all duration-300"
+              >
+                Konsultasi Gratis
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
-          </div>
-          <div class="relative overflow-hidden bg-stone-800">
-            <img src="/images/portfolio-2.jpg" alt="Interior Detail"
-              class="w-full h-full object-cover object-right brightness-90 hover:brightness-100 transition-all duration-500 scale-110 hover:scale-100" />
           </div>
         </div>
 
-        <!-- TITLE BAR -->
-        <div class="bg-stone-950 border-b border-stone-800">
-          <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 py-14 md:py-20">
-              <div class="flex-1">
-                <h1 class="font-bold text-stone-50 uppercase leading-[1.05] tracking-tight text-[clamp(2.8rem,5.5vw,5.5rem)] mb-6">
-                  Desain <span class="text-orange-400">Interior</span>
-                </h1>
-                <p class="text-stone-300 text-lg md:text-xl leading-relaxed max-w-2xl">
-                  Kami merancang dan mewujudkan interior yang fungsional, estetis, dan nyaman — dari rumah tinggal, kantor, apartemen, retail, hingga ruang komersial lainnya.
-                </p>
-              </div>
-              <div class="flex-shrink-0 flex flex-row md:flex-col items-center gap-6">
-                <a href="https://wa.me/6282242058673" target="_blank" rel="noopener noreferrer"
-                  class="group w-36 h-36 md:w-44 md:h-44 rounded-full border-2 border-orange-600/50 hover:border-orange-500 flex items-center justify-center text-center transition-all duration-300 hover:bg-orange-500/10">
-                  <span class="text-[11px] md:text-[13px] font-bold uppercase tracking-widest text-orange-400 group-hover:text-orange-300 leading-snug transition-colors">
-                    Hubungi<br />Sekarang
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
+        <!-- Scroll line -->
+        <div
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center pb-5 opacity-40"
+        >
+          <div class="w-px h-12 bg-stone-400" />
         </div>
       </header>
 
-      <!-- OVERVIEW -->
-      <section class="py-24 md:py-32 bg-white border-b border-stone-200">
+      <!-- ===== MANIFESTO — editorial paragraph ===== -->
+      <section class="bg-white py-20 md:py-28 border-b border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            <div class="lg:col-span-5">
-              <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4">Design &amp; Build Interior</p>
-              <h2 class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.5rem)]">
-                Ruang yang<br /><span class="text-orange-600">Bercerita</span>
-              </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Left vertical label -->
+            <div class="lg:col-span-3 flex flex-col">
+              <div class="flex items-start gap-4 lg:gap-0 lg:flex-col">
+                <div class="w-px h-16 bg-orange-500 flex-shrink-0" />
+                <p
+                  class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 lg:mt-4 lg:writing-mode-vertical"
+                >
+                  Design &amp; Build Interior
+                </p>
+              </div>
             </div>
-            <div class="lg:col-span-7 lg:pt-4">
-              <p class="text-xl md:text-2xl text-stone-600 leading-relaxed border-l-2 border-orange-500 pl-8 mb-10">
-                Dari konsep hingga finishing — tim desainer dan pelaksana kami memastikan setiap detail ruang mencerminkan karakter, fungsi, dan estetika yang Anda inginkan.
+
+            <!-- Right: big paragraph -->
+            <div class="lg:col-span-9">
+              <p
+                class="text-[clamp(1.2rem,2.5vw,2rem)] text-stone-700 leading-[1.6] font-light max-w-4xl mb-8"
+              >
+                Kami merancang dan mewujudkan interior yang fungsional, estetis,
+                dan nyaman — dari rumah tinggal, kantor, apartemen, hingga ruang
+                komersial. Setiap proyek dimulai dari pemahaman mendalam tentang
+                <em class="not-italic font-semibold text-stone-950"
+                  >siapa yang akan menggunakan ruang tersebut</em
+                >, bukan sekadar mengikuti tren.
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div v-for="p in pillars" :key="p.title"
-                  class="p-6 border border-stone-200 bg-stone-50 rounded-2xl flex flex-col gap-3 group hover:border-orange-300 hover:shadow-lg hover:shadow-stone-900/10 transition-all duration-300">
-                  <div class="w-10 h-10 rounded-full border border-orange-200 bg-orange-50 flex items-center justify-center mb-1">
-                    <span class="text-orange-600 text-lg">{{ p.icon }}</span>
-                  </div>
-                  <h4 class="font-bold text-stone-950 text-sm uppercase tracking-wider">{{ p.title }}</h4>
-                  <p class="text-stone-600 text-sm leading-relaxed">{{ p.desc }}</p>
-                </div>
-              </div>
+              <p class="text-stone-500 text-base leading-relaxed max-w-2xl">
+                Dari konsep hingga finishing — tim desainer dan pelaksana kami
+                memastikan setiap detail ruang mencerminkan karakter, fungsi,
+                dan estetika yang Anda inginkan.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CAROUSEL -->
-      <section class="bg-stone-950 py-16 md:py-24 border-b border-stone-800">
-        <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="flex items-end justify-between mb-8">
-            <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Galeri Proyek</p>
-              <h2 class="font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(1.5rem,3vw,2.5rem)]">
-                Karya Nyata <span class="text-orange-400">Kami</span>
-              </h2>
+      <!-- ===== SERVICE SHOWCASE ===== -->
+      <section class="bg-white py-12 md:py-16 border-b border-stone-200">
+        <div class="w-11/12 max-w-[100rem] mx-auto section-padding border">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="w-full overflow-hidden aspect-[3/2]">
+              <img
+                src="/images/portfolio-1.jpg"
+                alt="Proyek Desain Interior 1"
+                class="w-full h-full object-cover brightness-90 hover:brightness-100 hover:scale-105 transition-all duration-500"
+                loading="lazy"
+              />
             </div>
-            <div class="flex items-center gap-3 pb-1">
-              <button v-for="(_, i) in carouselImages" :key="i" @click="goToSlide(i)"
-                :class="['transition-all duration-300 rounded-full', currentSlide === i ? 'w-8 h-2 bg-orange-400' : 'w-2 h-2 bg-stone-600 hover:bg-stone-400']"
-                :aria-label="`Gambar ${i + 1}`" />
+
+            <div class="w-full overflow-hidden aspect-[3/2]">
+              <img
+                src="/images/portfolio-2.jpg"
+                alt="Proyek Desain Interior 2"
+                class="w-full h-full object-cover brightness-90 hover:brightness-100 hover:scale-105 transition-all duration-500"
+                loading="lazy"
+              />
             </div>
-          </div>
-          <div class="relative overflow-hidden rounded-xl" @mouseenter="pauseAuto" @mouseleave="resumeAuto">
-            <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-              <div v-for="(img, i) in carouselImages" :key="i" class="w-full flex-shrink-0">
-                <div class="aspect-[16/7] w-full overflow-hidden bg-stone-900">
-                  <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover" loading="lazy" />
-                </div>
-              </div>
+
+            <div class="w-full overflow-hidden aspect-[3/2]">
+              <img
+                src="/images/service-interior.jpg"
+                alt="Proyek Desain Interior 3"
+                class="w-full h-full object-cover object-center brightness-90 hover:brightness-100 hover:scale-105 transition-all duration-500"
+                loading="lazy"
+              />
             </div>
-            <button @click="prev"
-              class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-stone-950/80 border border-stone-700 hover:border-orange-500 flex items-center justify-center text-stone-300 hover:text-orange-400 transition-all duration-200 backdrop-blur-sm"
-              aria-label="Sebelumnya">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button @click="next"
-              class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-stone-950/80 border border-stone-700 hover:border-orange-500 flex items-center justify-center text-stone-300 hover:text-orange-400 transition-all duration-200 backdrop-blur-sm"
-              aria-label="Selanjutnya">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
         </div>
       </section>
 
-      <!-- LINGKUP LAYANAN -->
-      <section class="py-24 md:py-32 bg-stone-950 border-b border-stone-800">
+      <!-- ===== SERVICE PILLARS — numbered full-width rows ===== -->
+      <section class="bg-stone-950 py-20 md:py-28 border-b border-stone-800">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="max-w-2xl mb-16 md:mb-20">
-            <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-4">Lingkup Layanan</p>
-            <h2 class="font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.5rem)] mb-5">
-              Apa yang Kami<br /><span class="text-orange-400">Tangani</span>
+          <div class="mb-14">
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
+            >
+              Lingkup Layanan
+            </p>
+            <h2
+              class="text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight"
+            >
+              Apa yang Kami <span class="text-orange-400">Kerjakan</span>
             </h2>
-            <p class="text-stone-300 text-lg leading-relaxed">Tiga pilar utama layanan interior kami dari ide hingga ruang siap pakai.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div v-for="(scope, idx) in scopes" :key="scope.title"
-              class="group relative p-8 md:p-10 bg-stone-900 border border-stone-800 hover:border-orange-500/40 transition-all duration-500 overflow-hidden flex flex-col">
-              <div class="absolute inset-0 bg-gradient-to-br from-orange-900/0 to-orange-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div class="relative z-10 flex flex-col flex-1">
-                <span class="font-mono text-stone-700 text-6xl font-bold leading-none mb-8 select-none">0{{ idx + 1 }}</span>
-                <h3 class="text-xl md:text-2xl font-bold text-stone-50 uppercase tracking-tight mb-5 group-hover:text-orange-300 transition-colors">{{ scope.title }}</h3>
-                <p class="text-stone-400 leading-relaxed mb-8 flex-1">{{ scope.desc }}</p>
-                <ul class="flex flex-col gap-2.5 mt-auto">
-                  <li v-for="f in scope.features" :key="f" class="flex items-start gap-3 text-sm text-stone-300">
-                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
-                    {{ f }}
+
+          <!-- Full-width numbered rows — easy to read, no cramped columns -->
+          <div
+            class="flex flex-col divide-y divide-stone-800 border-t border-stone-800"
+          >
+            <div
+              v-for="(scope, idx) in scopes"
+              :key="scope.title"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
+            >
+              <!-- Step number + label -->
+              <div
+                class="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2 lg:pt-1"
+              >
+                <span
+                  class="text-3xl font-bold font-mono text-orange-500 leading-none select-none"
+                >
+                  {{ String(idx + 1).padStart(2, "0") }}
+                </span>
+              </div>
+
+              <!-- Title + desc -->
+              <div class="lg:col-span-5">
+                <h3
+                  class="text-xl md:text-2xl font-bold text-stone-50 uppercase tracking-tight mb-4"
+                >
+                  {{ scope.title }}
+                </h3>
+                <p class="text-stone-300 text-base leading-relaxed">
+                  {{ scope.desc }}
+                </p>
+              </div>
+
+              <!-- Feature list -->
+              <div class="lg:col-span-6">
+                <ul class="flex flex-col gap-4">
+                  <li
+                    v-for="f in scope.features"
+                    :key="f"
+                    class="flex items-start gap-4"
+                  >
+                    <span
+                      class="mt-2.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0"
+                    />
+                    <span class="text-stone-300 text-base leading-relaxed">{{
+                      f
+                    }}</span>
                   </li>
                 </ul>
               </div>
@@ -155,98 +236,186 @@
         </div>
       </section>
 
-      <!-- DETAIL RUANG LINGKUP -->
-      <section class="py-24 md:py-32 bg-stone-50 border-b border-stone-200">
+      <!-- ===== DETAIL SCOPE — alternating split ===== -->
+      <section class="bg-stone-50 py-20 md:py-28 border-b border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            <div class="lg:sticky lg:top-32">
-              <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4">Detail Ruang Lingkup</p>
-              <h2 class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.2rem)] mb-6">
-                Setiap Detail<br /><span class="text-orange-600">Dipikirkan</span>
-              </h2>
-              <p class="text-stone-600 text-lg leading-relaxed max-w-md">
-                Dari analisis kebutuhan hingga supervisi lapangan, setiap langkah dijalankan dengan standar profesional.
-              </p>
-            </div>
-            <div class="flex flex-col">
-              <div v-for="(item, idx) in detailScopes" :key="item.title"
-                class="group flex gap-6 py-8 border-b border-stone-200 last:border-b-0 hover:bg-orange-50 -mx-4 px-4 transition-colors duration-200">
-                <div class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-stone-300 group-hover:border-orange-500 flex items-center justify-center text-sm font-bold text-stone-400 group-hover:text-orange-600 transition-colors mt-1">
-                  {{ String(idx + 1).padStart(2, '0') }}
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h4 class="font-bold text-stone-950 text-lg group-hover:text-orange-700 transition-colors">{{ item.title }}</h4>
-                  <p class="text-stone-600 text-sm leading-relaxed">{{ item.desc }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DELIVERABLES -->
-      <section class="py-24 md:py-32 bg-stone-950 border-b border-stone-800">
-        <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="max-w-2xl mb-16">
-            <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-4">Output &amp; Deliverables</p>
-            <h2 class="font-bold text-stone-50 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.2rem)] mb-5">
-              Yang Anda<br /><span class="text-orange-400">Terima</span>
+          <div class="mb-14">
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-3"
+            >
+              Detail Ruang Lingkup
+            </p>
+            <h2
+              class="text-[clamp(2rem,4vw,3rem)] font-bold uppercase tracking-tight text-stone-950 leading-tight"
+            >
+              Setiap Detail <span class="text-orange-600">Dipikirkan</span>
             </h2>
-            <p class="text-stone-300 text-lg leading-relaxed">Setiap deliverable didokumentasikan dengan standar tinggi dan diserahkan tepat waktu.</p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            <div v-for="d in deliverables" :key="d.title"
-              class="group p-7 bg-stone-900 border border-stone-800 hover:border-orange-500/50 transition-all duration-300 flex flex-col gap-4">
-              <div class="w-10 h-10 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-stone-950 transition-colors duration-300">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h4 class="font-bold text-stone-50 text-base leading-snug group-hover:text-orange-300 transition-colors">{{ d.title }}</h4>
-              <p class="text-stone-400 text-sm leading-relaxed">{{ d.desc }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- KEUNGGULAN -->
-      <section class="py-24 md:py-32 bg-white border-b border-stone-200 overflow-hidden">
-        <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div class="relative">
-              <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl shadow-stone-900/10">
-                <img src="/images/service-interior.jpg" alt="Pengawasan Interior"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          <div
+            class="flex flex-col gap-0 divide-y divide-stone-200 border-t border-stone-200"
+          >
+            <div
+              v-for="(item, idx) in detailScopes"
+              :key="item.title"
+              class="group grid grid-cols-1 md:grid-cols-12 py-8 gap-6 hover:bg-orange-50 -mx-4 px-4 transition-colors duration-200"
+            >
+              <!-- Number -->
+              <div class="md:col-span-1 flex md:items-start pt-0.5">
+                <span
+                  class="text-xs font-bold font-mono text-stone-400 group-hover:text-orange-600 transition-colors"
+                >
+                  {{ String(idx + 1).padStart(2, "0") }}
+                </span>
               </div>
-              <div class="hidden md:block absolute -bottom-5 -right-5 w-40 h-40 border border-orange-300 pointer-events-none rounded-2xl" />
-              <div class="absolute bottom-6 left-6 bg-white border border-stone-200 p-5 max-w-xs shadow-lg rounded-xl">
-                <p class="font-bold text-orange-600 text-3xl mb-1">Detail</p>
-                <p class="text-stone-600 text-sm">Personalisasi penuh sesuai karakter dan gaya hidup Anda</p>
+              <!-- Title -->
+              <div class="md:col-span-4">
+                <h4
+                  class="font-bold text-stone-950 text-base md:text-lg group-hover:text-orange-700 transition-colors"
+                >
+                  {{ item.title }}
+                </h4>
               </div>
-            </div>
-            <div>
-              <p class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4">Keunggulan &amp; Nilai Tambah</p>
-              <h2 class="font-bold text-stone-950 uppercase leading-tight tracking-tight text-[clamp(2rem,4vw,3.2rem)] mb-8">
-                Personalisasi<br /><span class="text-orange-600">Terpandu</span>
-              </h2>
-              <div class="border-l-2 border-orange-500 pl-6 mb-10">
-                <p class="text-xl text-stone-700 leading-relaxed italic">
-                  "Desain yang disesuaikan dengan gaya hidup dan karakter brand Anda, serta pengawasan ketat di lapangan guna memastikan hasil akhir benar-benar sesuai dengan desain yang telah disepakati."
+              <!-- Desc -->
+              <div class="md:col-span-7">
+                <p class="text-stone-600 text-sm leading-relaxed">
+                  {{ item.desc }}
                 </p>
               </div>
-              <div class="grid grid-cols-2 gap-6 mb-10">
-                <div v-for="v in values" :key="v.label"
-                  class="flex flex-col gap-2 p-6 border border-stone-200 bg-stone-50 rounded-2xl hover:border-orange-300 hover:shadow-md transition-all">
-                  <span class="text-3xl md:text-4xl font-bold text-stone-950 font-mono">{{ v.value }}</span>
-                  <span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">{{ v.label }}</span>
-                </div>
-              </div>
-              <BaseButton href="https://wa.me/6282242058673" variant="primary" arrow>Diskusikan Proyek Anda</BaseButton>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ===== DELIVERABLES — horizontal tag strip ===== -->
+      <section class="bg-stone-950 py-20 md:py-28 border-b border-stone-800">
+        <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start"
+          >
+            <div class="lg:col-span-4">
+              <p
+                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-3"
+              >
+                Output &amp; Deliverables
+              </p>
+              <h2
+                class="text-[clamp(2rem,3.5vw,3rem)] font-bold uppercase tracking-tight text-stone-50 leading-tight mb-6"
+              >
+                Yang Anda<br /><span class="text-orange-400">Terima</span>
+              </h2>
+              <p class="text-stone-400 text-sm leading-relaxed">
+                Setiap deliverable didokumentasikan dengan standar tinggi dan
+                diserahkan tepat waktu sesuai kontrak.
+              </p>
+            </div>
+
+            <div
+              class="lg:col-span-8 flex flex-col gap-0 divide-y divide-stone-800 border-t border-stone-800"
+            >
+              <div
+                v-for="(d, idx) in deliverables"
+                :key="d.title"
+                class="flex items-start gap-6 py-6"
+              >
+                <span
+                  class="text-stone-700 text-xs font-mono font-bold mt-0.5 flex-shrink-0 w-6"
+                >
+                  {{ String(idx + 1).padStart(2, "0") }}
+                </span>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 flex-1"
+                >
+                  <h4 class="text-stone-100 font-semibold text-sm">
+                    {{ d.title }}
+                  </h4>
+                  <p
+                    class="text-stone-500 text-xs sm:text-right sm:max-w-xs leading-relaxed"
+                  >
+                    {{ d.desc }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA BAND ===== -->
+      <section class="bg-stone-950 py-24 md:py-32 border-t border-stone-800">
+        <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
+          <div
+            class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10"
+          >
+            <div>
+              <p
+                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-5"
+              >
+                Wujudkan Ruang Ideal Anda
+              </p>
+              <h2
+                class="text-[clamp(2.5rem,6vw,6rem)] font-bold uppercase leading-[0.9] tracking-tight text-stone-50"
+              >
+                Mulai<br />Proyek <span class="text-orange-400">Anda</span>
+              </h2>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/6282242058673"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 text-stone-950 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors duration-200"
+              >
+                Hubungi via WhatsApp
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/#portfolio"
+                class="inline-flex items-center gap-3 border border-stone-700 hover:border-stone-400 text-stone-300 hover:text-stone-100 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors duration-200"
+              >
+                Lihat Portofolio
+              </a>
+            </div>
+          </div>
+          <div
+            class="mt-16 pt-8 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-500"
+          >
+            <div>
+              <span
+                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
+                >Telepon</span
+              >
+              0271-7851871
+            </div>
+            <div>
+              <span
+                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
+                >WhatsApp</span
+              >
+              +62 822-4205-8673
+            </div>
+            <div>
+              <span
+                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
+                >Alamat</span
+              >
+              Jl. Keden No.33, Kartasura, Sukoharjo, Jawa Tengah
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <LayoutFooter />
   </div>
@@ -255,70 +424,87 @@
 <script setup>
 useSeoMeta({
   title: "Jasa Desain Interior | Rombong Raharjo",
-  description: "Layanan desain dan build interior profesional untuk hunian, kantor, apartemen, dan ruang komersial. Fungsional, estetis, dan sesuai karakter Anda.",
+  description:
+    "Layanan desain dan build interior profesional untuk hunian, kantor, apartemen, dan ruang komersial. Fungsional, estetis, dan sesuai karakter Anda.",
 });
-
-// Carousel
-const carouselImages = [
-  { src: "/images/services/image1.png", alt: "Interior Proyek 1" },
-  { src: "/images/services/image2.png", alt: "Interior Proyek 2" },
-  { src: "/images/services/image3.png", alt: "Interior Proyek 3" },
-];
-const currentSlide = ref(0);
-let autoTimer = null;
-function next() { currentSlide.value = (currentSlide.value + 1) % carouselImages.length; }
-function prev() { currentSlide.value = (currentSlide.value - 1 + carouselImages.length) % carouselImages.length; }
-function goToSlide(i) { currentSlide.value = i; }
-function pauseAuto() { clearInterval(autoTimer); }
-function resumeAuto() { autoTimer = setInterval(next, 4000); }
-onMounted(() => { autoTimer = setInterval(next, 4000); });
-onUnmounted(() => { clearInterval(autoTimer); });
-
-const pillars = [
-  { icon: "🎨", title: "Perancangan Konsep", desc: "Space planning, pemilihan tema, warna, material, dan pencahayaan sesuai karakter ruang Anda." },
-  { icon: "🖥️", title: "Visualisasi 3D", desc: "Render 3D detail membantu Anda melihat wujud nyata ruangan sebelum pembangunan dimulai." },
-  { icon: "🔨", title: "Pelaksanaan & Finishing", desc: "Pengadaan material, pengerjaan dinding, plafon, lantai, hingga instalasi listrik dan pencahayaan." },
-];
 
 const scopes = [
   {
     title: "Perancangan Konsep",
     desc: "Membangun fondasi estetika dan fungsi ruang melalui riset mendalam atas kebutuhan pengguna.",
-    features: ["Space planning & sirkulasi", "Tema, palet material, pencahayaan", "Aspek akustik & kenyamanan"],
+    features: [
+      "Space planning & sirkulasi",
+      "Tema, palet material, pencahayaan",
+      "Kajian aspek akustik & kenyamanan",
+    ],
   },
   {
     title: "Visualisasi & Spesifikasi",
     desc: "Transformasi konsep menjadi visualisasi 3D dan dokumen teknis yang siap pelaksanaan.",
-    features: ["3D render detail per ruang", "Spesifikasi material & finishing", "Layout plan, elevasi, cut-section"],
+    features: [
+      "3D render detail per ruang",
+      "Spesifikasi material & finishing",
+      "Layout plan, elevasi, cut-section",
+    ],
   },
   {
     title: "Pelaksanaan & Supervisi",
-    desc: "Koordinasi pengadaan, fabrikasi, dan pengawasan lapangan hingga serah terima.",
-    features: ["Koordinasi MEP (elektrikal, HVAC)", "Pengadaan & instalasi FF&E", "Site supervision & quality control"],
+    desc: "Koordinasi pengadaan, fabrikasi, dan pengawasan lapangan hingga serah terima ruang siap pakai.",
+    features: [
+      "Koordinasi MEP (elektrikal, HVAC)",
+      "Pengadaan & instalasi FF&E",
+      "Site supervision & quality control",
+    ],
   },
 ];
 
 const detailScopes = [
-  { title: "Analisis Kebutuhan", desc: "Analisis pengguna dan space planning — aliran sirkulasi, kapasitas furnitur, dan kebutuhan fungsional ruang." },
-  { title: "Konsep Desain", desc: "Penentuan tema, palet material, pencahayaan, hingga pertimbangan aspek akustik untuk kenyamanan optimal." },
-  { title: "Visualisasi 3D", desc: "Pembuatan 3D render per ruang untuk presentasi detail kepada klien sebelum eksekusi lapangan dimulai." },
-  { title: "Spesifikasi Teknis", desc: "Detail material dan finishing — lantai, dinding, plafon — beserta daftar spesifikasi teknis lengkap." },
-  { title: "Koordinasi MEP", desc: "Pengaturan sistem elektrikal, HVAC, dan plumbing ringan di dalam interior secara terkoordinasi." },
-  { title: "FF&E & Supervisi", desc: "Pengadaan, fabrikasi, dan pemasangan furniture, fixtures & equipment, serta pengawasan hingga serah terima." },
+  {
+    title: "Analisis Kebutuhan",
+    desc: "Analisis pengguna dan space planning — aliran sirkulasi, kapasitas furnitur, dan kebutuhan fungsional ruang.",
+  },
+  {
+    title: "Konsep Desain",
+    desc: "Penentuan tema, palet material, pencahayaan, hingga pertimbangan aspek akustik untuk kenyamanan optimal.",
+  },
+  {
+    title: "Visualisasi 3D",
+    desc: "Pembuatan 3D render per ruang untuk presentasi detail kepada klien sebelum eksekusi lapangan dimulai.",
+  },
+  {
+    title: "Spesifikasi Teknis",
+    desc: "Detail material dan finishing — lantai, dinding, plafon — beserta daftar spesifikasi teknis lengkap.",
+  },
+  {
+    title: "Koordinasi MEP",
+    desc: "Pengaturan sistem elektrikal, HVAC, dan plumbing ringan di dalam interior secara terkoordinasi.",
+  },
+  {
+    title: "FF&E & Supervisi Lapangan",
+    desc: "Pengadaan, fabrikasi, dan pemasangan furniture, fixtures & equipment, serta pengawasan hingga serah terima.",
+  },
 ];
 
 const deliverables = [
-  { title: "Layout Plan & Elevasi", desc: "Gambar denah, elevasi, dan cut-section interior lengkap siap pelaksanaan." },
-  { title: "3D Render & Moodboard", desc: "Visualisasi 3D per ruang dan material moodboard untuk kesepakatan estetika." },
-  { title: "Spesifikasi Finishing", desc: "Daftar lengkap material dan finishing — lantai, dinding, plafon, dan elemen dekoratif." },
-  { title: "Jadwal FF&E", desc: "Jadwal pengadaan dan instalasi furniture, fixtures, dan equipment yang terukur." },
-  { title: "Dokumentasi Serah Terima", desc: "As-built drawings dan dokumen serah terima lengkap bila diperlukan." },
-];
-
-const values = [
-  { value: "100%", label: "Personalisasi" },
-  { value: "3D", label: "Visualisasi Dulu" },
-  { value: "Ketat", label: "Quality Control" },
-  { value: "Tepat", label: "Waktu & Mutu" },
+  {
+    title: "Layout Plan & Elevasi",
+    desc: "Gambar denah, elevasi, dan cut-section interior lengkap siap pelaksanaan.",
+  },
+  {
+    title: "3D Render & Moodboard",
+    desc: "Visualisasi 3D per ruang dan material moodboard untuk kesepakatan estetika.",
+  },
+  {
+    title: "Spesifikasi Finishing",
+    desc: "Daftar lengkap material dan finishing — lantai, dinding, plafon, elemen dekoratif.",
+  },
+  {
+    title: "Jadwal FF&E",
+    desc: "Jadwal pengadaan dan instalasi furniture, fixtures, dan equipment yang terukur.",
+  },
+  {
+    title: "Dokumentasi Serah Terima",
+    desc: "As-built drawings dan dokumen serah terima lengkap bila diperlukan.",
+  },
 ];
 </script>
