@@ -182,25 +182,35 @@
           </div>
 
           <!-- Full-width numbered rows -->
-          <div class="flex flex-col divide-y divide-stone-800 border-t border-stone-800">
+          <div
+            class="flex flex-col divide-y divide-stone-800 border-t border-stone-800"
+          >
             <div
               v-for="(cat, idx) in categories"
               :key="cat.name"
               class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14"
             >
               <!-- Step number -->
-              <div class="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2 lg:pt-1">
-                <span class="text-3xl font-bold font-mono text-orange-500 leading-none select-none">
+              <div
+                class="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2 lg:pt-1"
+              >
+                <span
+                  class="text-3xl font-bold font-mono text-orange-500 leading-none select-none"
+                >
                   {{ String(idx + 1).padStart(2, "0") }}
                 </span>
               </div>
 
               <!-- Name + desc -->
               <div class="lg:col-span-5">
-                <h3 class="text-xl md:text-2xl font-bold text-stone-50 uppercase tracking-tight mb-4">
+                <h3
+                  class="text-xl md:text-2xl font-bold text-stone-50 uppercase tracking-tight mb-4"
+                >
                   {{ cat.name }}
                 </h3>
-                <p class="text-stone-300 text-base leading-relaxed">{{ cat.desc }}</p>
+                <p class="text-stone-300 text-base leading-relaxed">
+                  {{ cat.desc }}
+                </p>
               </div>
 
               <!-- Spec tags as list -->
@@ -211,8 +221,12 @@
                     :key="tag"
                     class="flex items-start gap-4"
                   >
-                    <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
-                    <span class="text-stone-300 text-base leading-relaxed">{{ tag }}</span>
+                    <span
+                      class="mt-2.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0"
+                    />
+                    <span class="text-stone-300 text-base leading-relaxed">{{
+                      tag
+                    }}</span>
                   </li>
                 </ul>
               </div>
@@ -335,77 +349,74 @@
       </section>
 
       <!-- ===== CTA BAND ===== -->
-      <section class="bg-stone-950 py-24 md:py-32 border-t border-stone-800">
+      <section class="bg-white py-28 md:py-40 border-t border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div
-            class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10"
-          >
-            <div>
-              <p
-                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-5"
+          <!-- Centered block -->
+          <div class="text-center">
+            <p
+              class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-10"
+            >
+              Wujudkan Ruang Anda
+            </p>
+            <h2
+              class="text-[clamp(3.5rem,8vw,9rem)] font-bold uppercase leading-[0.88] tracking-tight text-stone-950 mb-16"
+            >
+              Diskusikan<br />Kebutuhan
+              <span class="text-orange-500">Anda</span>
+            </h2>
+
+            <!-- Rule separator -->
+            <div class="w-full h-px bg-stone-200 mb-16" />
+
+            <!-- Action -->
+            <a
+              href="https://wa.me/6282242058673"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 bg-stone-950 hover:bg-stone-800 text-white text-sm font-bold uppercase tracking-widest px-10 py-4 transition-colors duration-200"
+            >
+              Hubungi via WhatsApp
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                Wujudkan Ruang Anda
-              </p>
-              <h2
-                class="text-[clamp(2.5rem,6vw,6rem)] font-bold uppercase leading-[0.9] tracking-tight text-stone-50"
-              >
-                Diskusikan<br />Kebutuhan
-                <span class="text-orange-400">Anda</span>
-              </h2>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://wa.me/6282242058673"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 text-stone-950 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors duration-200"
-              >
-                Hubungi via WhatsApp
-                <svg
-                  class="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-              <a
-                href="/#portfolio"
-                class="inline-flex items-center gap-3 border border-stone-700 hover:border-stone-400 text-stone-300 hover:text-stone-100 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors duration-200"
-              >
-                Lihat Portofolio
-              </a>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
           </div>
+
+          <!-- Contact strip -->
           <div
-            class="mt-16 pt-8 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-500"
+            class="mt-20 pt-8 border-t border-stone-200 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-400"
           >
             <div>
               <span
-                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
+                class="block font-semibold uppercase tracking-widest text-stone-300 mb-1"
                 >Telepon</span
               >
               0271-7851871
             </div>
             <div>
               <span
-                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
+                class="block font-semibold uppercase tracking-widest text-stone-300 mb-1"
                 >WhatsApp</span
               >
               +62 822-4205-8673
             </div>
             <div>
               <span
-                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
+                class="block font-semibold uppercase tracking-widest text-stone-300 mb-1"
                 >Alamat</span
               >
-              Jl. Keden No.33, Kartasura, Sukoharjo, Jawa Tengah
+              Jl. Keden No.33, Dusun III, Singopuran, Kec. Kartasura, Kabupaten
+              Sukoharjo, Jawa Tengah 57169
             </div>
           </div>
         </div>

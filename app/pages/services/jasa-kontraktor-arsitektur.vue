@@ -324,78 +324,48 @@
       </section>
 
       <!-- ===== CTA BAND ===== -->
-      <section class="bg-stone-950 py-24 md:py-32 border-t border-stone-800">
+      <section class="bg-white py-28 md:py-40 border-t border-stone-200">
         <div class="w-11/12 max-w-[100rem] mx-auto section-padding">
-          <div
-            class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10"
-          >
-            <div>
-              <p
-                class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400 mb-5"
-              >
-                Siap Membangun?
-              </p>
-              <h2
-                class="text-[clamp(2.5rem,6vw,6rem)] font-bold uppercase leading-[0.9] tracking-tight text-stone-50"
-              >
-                Diskusikan<br />Proyek <span class="text-orange-400">Anda</span>
-              </h2>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://wa.me/6282242058673"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 text-stone-950 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors duration-200"
-              >
-                Hubungi via WhatsApp
-                <svg
-                  class="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-              <a
-                href="/#portfolio"
-                class="inline-flex items-center gap-3 border border-stone-700 hover:border-stone-400 text-stone-300 hover:text-stone-100 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors duration-200"
-              >
-                Lihat Portofolio
-              </a>
-            </div>
+
+          <!-- Centered block -->
+          <div class="text-center">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-600 mb-10">
+              Siap Membangun?
+            </p>
+            <h2 class="text-[clamp(3.5rem,8vw,9rem)] font-bold uppercase leading-[0.88] tracking-tight text-stone-950 mb-16">
+              Diskusikan<br />Proyek <span class="text-orange-500">Anda</span>
+            </h2>
+
+            <!-- Rule separator -->
+            <div class="w-full h-px bg-stone-200 mb-16" />
+
+            <!-- Action -->
+            <a
+              href="https://wa.me/6282242058673"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 bg-stone-950 hover:bg-stone-800 text-white text-sm font-bold uppercase tracking-widest px-10 py-4 transition-colors duration-200"
+            >
+              Hubungi via WhatsApp
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
 
-          <!-- Horizontal rule with contact strip -->
-          <div
-            class="mt-16 pt-8 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-500"
-          >
+          <!-- Contact strip -->
+          <div class="mt-20 pt-8 border-t border-stone-200 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-400">
             <div>
-              <span
-                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
-                >Telepon</span
-              >
+              <span class="block font-semibold uppercase tracking-widest text-stone-300 mb-1">Telepon</span>
               0271-7851871
             </div>
             <div>
-              <span
-                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
-                >WhatsApp</span
-              >
+              <span class="block font-semibold uppercase tracking-widest text-stone-300 mb-1">WhatsApp</span>
               +62 822-4205-8673
             </div>
             <div>
-              <span
-                class="block font-semibold uppercase tracking-widest text-stone-600 mb-1"
-                >Alamat</span
-              >
-              Jl. Keden No.33, Kartasura, Sukoharjo, Jawa Tengah
+              <span class="block font-semibold uppercase tracking-widest text-stone-300 mb-1">Alamat</span>
+              Jl. Keden No.33, Dusun III, Singopuran, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169
             </div>
           </div>
         </div>
